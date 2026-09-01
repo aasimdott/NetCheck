@@ -1,0 +1,65 @@
+:root{
+    --bg:#0B1418;
+    --line:rgba(232,237,236,0.14);
+    --text:#E8EDEC;
+    --text-dim:#7C9092;
+    --accent:#FF8A3D;
+    --accent-2:#4FA8B8;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Space Grotesk', sans-serif;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 16px;
+  }
+  .wrap{width:100%;max-width:520px;text-align:center;}
+  h1{font-size:1.5rem;font-weight:700;margin:0 0 4px;letter-spacing:-0.01em;}
+  .tagline{color:var(--text-dim);margin:0 0 28px;font-size:0.95rem;}
+  canvas{width:100%;height:120px;display:block;margin-bottom:4px;}
+  .readout{margin:8px 0 2px;}
+  #bigNumber{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:3.2rem;
+    font-weight:500;
+    font-variant-numeric:tabular-nums;
+    color:var(--accent);
+    transition:color .2s;
+  }
+  #bigUnit{display:block;color:var(--text-dim);font-size:0.85rem;margin-top:-6px;}
+  .status{color:var(--text-dim);font-size:0.85rem;min-height:1.2em;margin:12px 0 28px;}
+  .stats{display:flex;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:32px;}
+  .stat{flex:1;padding:16px 8px;}
+  .stat + .stat{border-left:1px solid var(--line);}
+  .stat-label{color:var(--text-dim);font-size:0.75rem;margin-bottom:6px;}
+  .stat-value{font-family:'IBM Plex Mono', monospace;font-size:1.1rem;font-variant-numeric:tabular-nums;}
+  button{
+    background:var(--accent);
+    color:#1A0F06;
+    border:none;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:1rem;
+    padding:14px 34px;
+    border-radius:2px;
+    cursor:pointer;
+    transition:opacity .15s;
+  }
+  button:hover{opacity:0.9;}
+  button:disabled{opacity:0.55;cursor:default;}
+  button:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;}
+  .note{color:var(--text-dim);font-size:0.75rem;line-height:1.6;margin-top:24px;max-width:420px;margin-left:auto;margin-right:auto;}
+  .error-note{display:none;color:#E8A46A;font-size:0.8rem;margin-top:14px;line-height:1.5;}
+  @media (max-width:420px){
+    #bigNumber{font-size:2.4rem;}
+    .stats{flex-direction:column;}
+    .stat + .stat{border-left:none;border-top:1px solid var(--line);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    canvas{opacity:0.6;}
+  }

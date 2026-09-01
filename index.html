@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>netcheck — a plain speed test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet", href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>netcheck</h1>
+  <p class="tagline">See what your connection can actually do.</p>
+
+  <canvas id="trace" width="600" height="140"></canvas>
+
+  <div class="readout">
+    <span id="bigNumber">--</span>
+    <span id="bigUnit">Mbps down</span>
+  </div>
+
+  <div class="status" id="status">Ready when you are.</div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-label">Ping</div>
+      <div class="stat-value" id="pingVal">--</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Download</div>
+      <div class="stat-value" id="downVal">--</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Upload</div>
+      <div class="stat-value" id="upVal">--</div>
+    </div>
+  </div>
+
+  <button id="startBtn">Start test</button>
+  <p class="error-note" id="errorNote">
+    Couldn't reach the test server from here. This tool needs direct network access —
+    if you're viewing it inside a preview or sandboxed frame, save this file and open it
+    directly in your browser instead.
+  </p>
+
+  <p class="note">
+    Uses Cloudflare's public network-test endpoints for download and upload traffic.
+    Results are estimates — actual speed varies with server load, distance, and anything
+    else sharing your connection right now.
+  </p>
+</div>
+
+<script src="netcheck.js"></script>
+</body>
+</html>
